@@ -1,0 +1,1 @@
+$('nav input[type="checkbox"]').removeAttr('checked');

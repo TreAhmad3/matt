@@ -7,9 +7,19 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
+
     body {
         background-image: url("weppageTILE.png");
         margin: 0 auto;
@@ -24,11 +34,12 @@
         text-align: center;
     }
     
-    #header-kiwi {
+    .header-kiwi {
         position: relative;
         width: 200px;
-        top:-10px;
-        float: left;
+        top:0px;
+        right:-15px;
+        padding:50px;
     }
     
     #page-links {
@@ -58,19 +69,23 @@
     }
     
     #album-art {
-        position: flex;
+        position: relative;
         display: inline;
         text-align: center;
-        margin: 10px 0 60px 400px;
+        margin: 10px 0 60px 0px;
         width: 400px;
         border: 3px double black;
         clear:both;
+    }
+    .border {
+        border: 3px double black;
     }
     
     #sounds {
         display: block;
         margin: auto;
         padding-bottom: 20px;
+        padding-top:30px;
     }
     
     #page {
@@ -96,22 +111,62 @@
 </head>
 
 <body>
+<!--NAVBAR BEGIN-->
+<header>
+   <nav>
+         <input type="checkbox" id="css-toggle-menu" name="css-toggle-menu">
+         <ul class="main" style="list-style:none">
+               <li><a href="">Home</a></li>
+               <li><a href="">Merch</a></li>
+               <li><a href="">Contact</a></li>
+         </ul> 
+         <label for="css-toggle-menu" id="css-toggle-menu"></label> 
+   </nav>
+</header>
+<!--END NAVBAR-->
+
+<!-- page content -->
+        
+
+
     <div class="container-fluid">
-        <div class="row" id="header">
-            <img class="col-sm-2" id="header-kiwi" src="webpagelogo.png" alt="kiwi">
-            <div class="col-sm-8"></div>
+       <div class="top-kiwis col-lg-12 row"  style="position:relative; text-align:center;">
+            <!-- as window slides to a smaller size, less kiwis appear on the page -->
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <img class="header-kiwi" src="webpagelogo.png" alt="kiwi">
+            </div>
+            <div class="hidden-xs col-sm-6 col-md-4 col-lg-3">    
+                <img class="header-kiwi" src="webpagelogo.png" alt="kiwi">
+            </div>
+            <div class="hidden-xs hidden-sm col-md-4 col-lg-3">
+                <img class="header-kiwi" src="webpagelogo.png" alt="kiwi">
+            </div>
+            <div class="hidden-xs hidden-sm hidden-md col-lg-3">
+                <img class="header-kiwi" src="webpagelogo.png" alt="kiwi">
+            </div>
+                <!--<img class="header-kiwi" src="webpagelogo.png" alt="kiwi">-->
+        </div>
             <!-- add white boxes around on hover -->
-            <div class="col-sm-2" id="page-links">
+            <!-- <div class="col-sm-2" id="page-links">
                 <ul style="list-style-type:none;">
                     <li><a href="#">MERCH</a></li>
                     <li><a href="#">CONTACT</a></li>
                 </ul>
-            </div>
-        </div>
+            </div> -->
+     
         <!-- <div id="page"> -->
-        <div class="row col-md-12">
-            <img id="album-art" src="KIWI-cover.png" alt="kiwi">
-        
+       <!--  <div class="row"> -->
+            
+            <img class="img-responsive border" src="KIWI-cover.png" alt="kiwi" width="100%" height="345">
+    </div><!--Closing container div for album artwork-->
+
+<!--id="album-art" 
+<div class="container">
+  <h2>Image</h2>
+  <p>The .img-responsive class makes the image scale nicely to the parent element (resize the browser window to see the effect):</p>
+  <img class="img-responsive" src="img_chania.jpg" alt="Chania" width="460" height="345"> 
+</div>-->
+
 
             <iframe id="sounds" width="70%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/177754816&amp;color=fca864&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
             <div id="social-media">
@@ -138,7 +193,9 @@
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 </body>
 
 </html>
